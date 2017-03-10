@@ -33,6 +33,13 @@
     //使用YYModel完成字典转模型
     NSArray *modelArray = [NSArray yy_modelArrayWithClass:[SSXChannelModel class] json:channelDicArray];
     
+    //升序排列
+    modelArray = [modelArray sortedArrayUsingComparator:^NSComparisonResult(SSXChannelModel *obj1, SSXChannelModel *obj2) {
+        
+        return [obj1.tid compare:obj2.tid];
+        
+    }];
+    
     return modelArray;
 }
 @end

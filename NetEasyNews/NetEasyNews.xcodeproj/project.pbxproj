@@ -17,6 +17,9 @@
 		D8D66DCE1E72C2FA00BD28C6 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DCD1E72C2FA00BD28C6 /* topic_news.json */; };
 		D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */; };
 		D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */; };
+		D8D66DD71E72DF0000BD28C6 /* SSXNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD61E72DF0000BD28C6 /* SSXNewsCell.m */; };
+		D8D66DDA1E72E15000BD28C6 /* SSXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD91E72E15000BD28C6 /* SSXTableViewController.m */; };
+		D8D66DDE1E72E2AB00BD28C6 /* SSXNetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DDD1E72E2AB00BD28C6 /* SSXNetworkTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,12 @@
 		D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXChannelModel.m; sourceTree = "<group>"; };
 		D8D66DD21E72CFD300BD28C6 /* SSXChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXChannelLabel.h; sourceTree = "<group>"; };
 		D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXChannelLabel.m; sourceTree = "<group>"; };
+		D8D66DD51E72DF0000BD28C6 /* SSXNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXNewsCell.h; sourceTree = "<group>"; };
+		D8D66DD61E72DF0000BD28C6 /* SSXNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXNewsCell.m; sourceTree = "<group>"; };
+		D8D66DD81E72E15000BD28C6 /* SSXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXTableViewController.h; sourceTree = "<group>"; };
+		D8D66DD91E72E15000BD28C6 /* SSXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXTableViewController.m; sourceTree = "<group>"; };
+		D8D66DDC1E72E2AB00BD28C6 /* SSXNetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXNetworkTools.h; sourceTree = "<group>"; };
+		D8D66DDD1E72E2AB00BD28C6 /* SSXNetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXNetworkTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,7 @@
 		D8D66DAD1E72C04700BD28C6 /* NetEasyNews */ = {
 			isa = PBXGroup;
 			children = (
+				D8D66DDB1E72E24E00BD28C6 /* Tools */,
 				D8D66DC51E72C07800BD28C6 /* Classes */,
 				D8D66DB11E72C04700BD28C6 /* AppDelegate.h */,
 				D8D66DB21E72C04700BD28C6 /* AppDelegate.m */,
@@ -134,6 +144,8 @@
 			children = (
 				D8D66DCA1E72C2AF00BD28C6 /* SSXHomeController.h */,
 				D8D66DCB1E72C2AF00BD28C6 /* SSXHomeController.m */,
+				D8D66DD81E72E15000BD28C6 /* SSXTableViewController.h */,
+				D8D66DD91E72E15000BD28C6 /* SSXTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,8 +164,19 @@
 			children = (
 				D8D66DD21E72CFD300BD28C6 /* SSXChannelLabel.h */,
 				D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */,
+				D8D66DD51E72DF0000BD28C6 /* SSXNewsCell.h */,
+				D8D66DD61E72DF0000BD28C6 /* SSXNewsCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D8D66DDB1E72E24E00BD28C6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D8D66DDC1E72E2AB00BD28C6 /* SSXNetworkTools.h */,
+				D8D66DDD1E72E2AB00BD28C6 /* SSXNetworkTools.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */,
+				D8D66DD71E72DF0000BD28C6 /* SSXNewsCell.m in Sources */,
 				D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */,
 				D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */,
+				D8D66DDA1E72E15000BD28C6 /* SSXTableViewController.m in Sources */,
+				D8D66DDE1E72E2AB00BD28C6 /* SSXNetworkTools.m in Sources */,
 				D8D66DB01E72C04700BD28C6 /* main.m in Sources */,
 				D8D66DCC1E72C2AF00BD28C6 /* SSXHomeController.m in Sources */,
 			);

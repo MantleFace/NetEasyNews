@@ -9,6 +9,7 @@
 #import "SSXHomeController.h"
 #import "SSXChannelModel.h"
 #import "SSXChannelLabel.h"
+#import "SSXNewsCell.h"
 
 @interface SSXHomeController ()<UICollectionViewDataSource>
 
@@ -37,13 +38,16 @@ static NSString *news_id=@"news_id";
     [self setupChannelScrollView];
     
     [self setupNewsCollectionView];
+    
+    //iOS10后 collectionView会新增一个预加载 提高collectionView性能 ,提前准备好下一个cell 默认就是开启的
+    //self.newsCollectionView.prefetchingEnabled = YES;
 }
 
 - (void)setupNewsCollectionView{
     //设置数据源
     self.newsCollectionView.dataSource = self;
     
-//    self.newsCollectionView.delegate = self;
+    //self.newsCollectionView.delegate = self;
     
     //设置每个itemSize的大小
     self.flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 64 - 44);
@@ -76,9 +80,7 @@ static NSString *news_id=@"news_id";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:news_id forIndexPath:indexPath];
-    
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+    SSXNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:news_id forIndexPath:indexPath];
     
     return cell;
 }

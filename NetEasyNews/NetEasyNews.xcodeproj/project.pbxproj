@@ -10,10 +10,13 @@
 		6DD173D892065E8D0A415F3F /* libPods-NetEasyNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */; };
 		D8D66DB01E72C04700BD28C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DAF1E72C04700BD28C6 /* main.m */; };
 		D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DB21E72C04700BD28C6 /* AppDelegate.m */; };
-		D8D66DB61E72C04700BD28C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DB51E72C04700BD28C6 /* ViewController.m */; };
 		D8D66DB91E72C04700BD28C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DB71E72C04700BD28C6 /* Main.storyboard */; };
 		D8D66DBB1E72C04700BD28C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DBA1E72C04700BD28C6 /* Assets.xcassets */; };
 		D8D66DBE1E72C04700BD28C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DBC1E72C04700BD28C6 /* LaunchScreen.storyboard */; };
+		D8D66DCC1E72C2AF00BD28C6 /* SSXHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DCB1E72C2AF00BD28C6 /* SSXHomeController.m */; };
+		D8D66DCE1E72C2FA00BD28C6 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DCD1E72C2FA00BD28C6 /* topic_news.json */; };
+		D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */; };
+		D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +27,17 @@
 		D8D66DAF1E72C04700BD28C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8D66DB11E72C04700BD28C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8D66DB21E72C04700BD28C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D8D66DB41E72C04700BD28C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D8D66DB51E72C04700BD28C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D8D66DB81E72C04700BD28C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8D66DBA1E72C04700BD28C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8D66DBD1E72C04700BD28C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8D66DBF1E72C04700BD28C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D66DCA1E72C2AF00BD28C6 /* SSXHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXHomeController.h; sourceTree = "<group>"; };
+		D8D66DCB1E72C2AF00BD28C6 /* SSXHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXHomeController.m; sourceTree = "<group>"; };
+		D8D66DCD1E72C2FA00BD28C6 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
+		D8D66DCF1E72C97600BD28C6 /* SSXChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXChannelModel.h; sourceTree = "<group>"; };
+		D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXChannelModel.m; sourceTree = "<group>"; };
+		D8D66DD21E72CFD300BD28C6 /* SSXChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXChannelLabel.h; sourceTree = "<group>"; };
+		D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXChannelLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +93,7 @@
 				D8D66DC51E72C07800BD28C6 /* Classes */,
 				D8D66DB11E72C04700BD28C6 /* AppDelegate.h */,
 				D8D66DB21E72C04700BD28C6 /* AppDelegate.m */,
-				D8D66DB41E72C04700BD28C6 /* ViewController.h */,
-				D8D66DB51E72C04700BD28C6 /* ViewController.m */,
+				D8D66DCD1E72C2FA00BD28C6 /* topic_news.json */,
 				D8D66DB71E72C04700BD28C6 /* Main.storyboard */,
 				D8D66DBA1E72C04700BD28C6 /* Assets.xcassets */,
 				D8D66DBC1E72C04700BD28C6 /* LaunchScreen.storyboard */,
@@ -125,6 +132,8 @@
 		D8D66DC71E72C07800BD28C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8D66DCA1E72C2AF00BD28C6 /* SSXHomeController.h */,
+				D8D66DCB1E72C2AF00BD28C6 /* SSXHomeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +141,8 @@
 		D8D66DC81E72C07800BD28C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8D66DCF1E72C97600BD28C6 /* SSXChannelModel.h */,
+				D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +150,8 @@
 		D8D66DC91E72C07800BD28C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8D66DD21E72CFD300BD28C6 /* SSXChannelLabel.h */,
+				D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 		D8D66DA31E72C04700BD28C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SSX;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = BasicTest;
 				TargetAttributes = {
@@ -206,6 +220,7 @@
 			files = (
 				D8D66DBE1E72C04700BD28C6 /* LaunchScreen.storyboard in Resources */,
 				D8D66DBB1E72C04700BD28C6 /* Assets.xcassets in Resources */,
+				D8D66DCE1E72C2FA00BD28C6 /* topic_news.json in Resources */,
 				D8D66DB91E72C04700BD28C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D66DB61E72C04700BD28C6 /* ViewController.m in Sources */,
+				D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */,
 				D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */,
+				D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */,
 				D8D66DB01E72C04700BD28C6 /* main.m in Sources */,
+				D8D66DCC1E72C2AF00BD28C6 /* SSXHomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +441,7 @@
 				D8D66DC41E72C04700BD28C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

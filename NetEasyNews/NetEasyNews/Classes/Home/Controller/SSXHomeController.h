@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SSXHomeController.h
 //  NetEasyNews
 //
 //  Created by Dragon on 2017/3/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SSXHomeController : UIViewController
 
 @end
-

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6DD173D892065E8D0A415F3F /* libPods-NetEasyNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */; };
 		D8C7BEFA1E73823B00599E3F /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEF91E73823B00599E3F /* NSArray+Log.m */; };
+		D8C7BEFD1E73DBF700599E3F /* SSXNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEFC1E73DBF700599E3F /* SSXNewsModel.m */; };
+		D8C7BF001E741E9D00599E3F /* SSXTableNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEFF1E741E9D00599E3F /* SSXTableNewsCell.m */; };
+		D8C7BF021E741EE900599E3F /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C7BF011E741EE900599E3F /* BaseCell.xib */; };
 		D8D66DB01E72C04700BD28C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DAF1E72C04700BD28C6 /* main.m */; };
 		D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DB21E72C04700BD28C6 /* AppDelegate.m */; };
 		D8D66DB91E72C04700BD28C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DB71E72C04700BD28C6 /* Main.storyboard */; };
@@ -29,6 +32,11 @@
 		D8A5764D7200D1D71181B160 /* Pods-NetEasyNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEasyNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEasyNews/Pods-NetEasyNews.release.xcconfig"; sourceTree = "<group>"; };
 		D8C7BEF81E73823B00599E3F /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		D8C7BEF91E73823B00599E3F /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		D8C7BEFB1E73DBF700599E3F /* SSXNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXNewsModel.h; sourceTree = "<group>"; };
+		D8C7BEFC1E73DBF700599E3F /* SSXNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXNewsModel.m; sourceTree = "<group>"; };
+		D8C7BEFE1E741E9D00599E3F /* SSXTableNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXTableNewsCell.h; sourceTree = "<group>"; };
+		D8C7BEFF1E741E9D00599E3F /* SSXTableNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXTableNewsCell.m; sourceTree = "<group>"; };
+		D8C7BF011E741EE900599E3F /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		D8D66DAB1E72C04700BD28C6 /* NetEasyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEasyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D66DAF1E72C04700BD28C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8D66DB11E72C04700BD28C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +168,8 @@
 			children = (
 				D8D66DCF1E72C97600BD28C6 /* SSXChannelModel.h */,
 				D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */,
+				D8C7BEFB1E73DBF700599E3F /* SSXNewsModel.h */,
+				D8C7BEFC1E73DBF700599E3F /* SSXNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +181,9 @@
 				D8D66DD31E72CFD300BD28C6 /* SSXChannelLabel.m */,
 				D8D66DD51E72DF0000BD28C6 /* SSXNewsCell.h */,
 				D8D66DD61E72DF0000BD28C6 /* SSXNewsCell.m */,
+				D8C7BEFE1E741E9D00599E3F /* SSXTableNewsCell.h */,
+				D8C7BEFF1E741E9D00599E3F /* SSXTableNewsCell.m */,
+				D8C7BF011E741EE900599E3F /* BaseCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +261,7 @@
 			files = (
 				D8D66DBE1E72C04700BD28C6 /* LaunchScreen.storyboard in Resources */,
 				D8D66DBB1E72C04700BD28C6 /* Assets.xcassets in Resources */,
+				D8C7BF021E741EE900599E3F /* BaseCell.xib in Resources */,
 				D8D66DCE1E72C2FA00BD28C6 /* topic_news.json in Resources */,
 				D8D66DB91E72C04700BD28C6 /* Main.storyboard in Resources */,
 			);
@@ -311,7 +325,9 @@
 				D8C7BEFA1E73823B00599E3F /* NSArray+Log.m in Sources */,
 				D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */,
 				D8D66DD71E72DF0000BD28C6 /* SSXNewsCell.m in Sources */,
+				D8C7BEFD1E73DBF700599E3F /* SSXNewsModel.m in Sources */,
 				D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */,
+				D8C7BF001E741E9D00599E3F /* SSXTableNewsCell.m in Sources */,
 				D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */,
 				D8D66DDA1E72E15000BD28C6 /* SSXTableViewController.m in Sources */,
 				D8D66DDE1E72E2AB00BD28C6 /* SSXNetworkTools.m in Sources */,

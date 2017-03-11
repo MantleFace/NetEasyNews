@@ -10,7 +10,6 @@
 #import "SSXChannelModel.h"
 #import "SSXChannelLabel.h"
 #import "SSXNewsCell.h"
-#import "SSXNetworkTools.h"
 
 @interface SSXHomeController ()<UICollectionViewDataSource>
 
@@ -42,22 +41,12 @@ static NSString *news_id=@"news_id";
     
     //iOS10后 collectionView会新增一个预加载 提高collectionView性能 ,提前准备好下一个cell 默认就是开启的
     //self.newsCollectionView.prefetchingEnabled = YES;
-    
-//    //开始网络请求
-//    [[SSXNetworkTools sharedTools] requestWithRequestType:GET andUrlStr:@"T1348648037603/0-20.html" andParams:nil andSuccess:^(id responseObject) {
-//        NSLog(@"%@",responseObject);
-//    } andFailure:^(NSError *error) {
-//        NSLog(@"%@",error);
-//    }];
-    
-    
+
 }
 
 - (void)setupNewsCollectionView{
     //设置数据源
     self.newsCollectionView.dataSource = self;
-    
-    //self.newsCollectionView.delegate = self;
     
     //设置每个itemSize的大小
     self.flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 64 - 44);

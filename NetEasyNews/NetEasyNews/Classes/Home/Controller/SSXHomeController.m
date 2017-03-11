@@ -10,6 +10,7 @@
 #import "SSXChannelModel.h"
 #import "SSXChannelLabel.h"
 #import "SSXNewsCell.h"
+#import "SSXNetworkTools.h"
 
 @interface SSXHomeController ()<UICollectionViewDataSource>
 
@@ -41,6 +42,15 @@ static NSString *news_id=@"news_id";
     
     //iOS10后 collectionView会新增一个预加载 提高collectionView性能 ,提前准备好下一个cell 默认就是开启的
     //self.newsCollectionView.prefetchingEnabled = YES;
+    
+//    //开始网络请求
+//    [[SSXNetworkTools sharedTools] requestWithRequestType:GET andUrlStr:@"T1348648037603/0-20.html" andParams:nil andSuccess:^(id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } andFailure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+    
+    
 }
 
 - (void)setupNewsCollectionView{
@@ -82,6 +92,16 @@ static NSString *news_id=@"news_id";
     
     SSXNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:news_id forIndexPath:indexPath];
     
+    SSXChannelModel *model = self.channelModelArray[indexPath.item];
+    
+    //频道id
+    NSString *tid = model.tid;
+    
+    //频道url
+    NSString *urlStr = [NSString stringWithFormat:@"%@/0-20.html",tid];
+    
+    cell.urlStr = urlStr;
+    
     return cell;
 }
 
@@ -108,6 +128,8 @@ static NSString *news_id=@"news_id";
         
         //设置字体大小
         channelLabel.font = [UIFont systemFontOfSize:14];
+        
+        channelLabel.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
         
         //设置对齐
         channelLabel.textAlignment = NSTextAlignmentCenter;

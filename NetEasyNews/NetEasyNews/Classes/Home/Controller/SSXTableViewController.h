@@ -10,4 +10,7 @@
 
 @interface SSXTableViewController : UITableViewController
 
+//请求地址
+@property(nonatomic,copy) NSString *urlStr;
+
 @end

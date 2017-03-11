@@ -10,4 +10,7 @@
 
 @interface SSXNewsCell : UICollectionViewCell
 
+//请求地址  负责传递给tableView
+@property(nonatomic,copy) NSString *urlStr;
+
 @end

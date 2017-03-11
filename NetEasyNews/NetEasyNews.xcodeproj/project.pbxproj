@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6DD173D892065E8D0A415F3F /* libPods-NetEasyNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */; };
+		D8C7BEFA1E73823B00599E3F /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEF91E73823B00599E3F /* NSArray+Log.m */; };
 		D8D66DB01E72C04700BD28C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DAF1E72C04700BD28C6 /* main.m */; };
 		D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D66DB21E72C04700BD28C6 /* AppDelegate.m */; };
 		D8D66DB91E72C04700BD28C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D66DB71E72C04700BD28C6 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		4A5FCB46C5FA2D9ACDFAEAF2 /* Pods-NetEasyNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEasyNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetEasyNews/Pods-NetEasyNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetEasyNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A5764D7200D1D71181B160 /* Pods-NetEasyNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEasyNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEasyNews/Pods-NetEasyNews.release.xcconfig"; sourceTree = "<group>"; };
+		D8C7BEF81E73823B00599E3F /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		D8C7BEF91E73823B00599E3F /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		D8D66DAB1E72C04700BD28C6 /* NetEasyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEasyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D66DAF1E72C04700BD28C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8D66DB11E72C04700BD28C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		D8D66DAD1E72C04700BD28C6 /* NetEasyNews */ = {
 			isa = PBXGroup;
 			children = (
+				D8C7BEF81E73823B00599E3F /* NSArray+Log.h */,
+				D8C7BEF91E73823B00599E3F /* NSArray+Log.m */,
 				D8D66DDB1E72E24E00BD28C6 /* Tools */,
 				D8D66DC51E72C07800BD28C6 /* Classes */,
 				D8D66DB11E72C04700BD28C6 /* AppDelegate.h */,
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C7BEFA1E73823B00599E3F /* NSArray+Log.m in Sources */,
 				D8D66DD11E72C97600BD28C6 /* SSXChannelModel.m in Sources */,
 				D8D66DD71E72DF0000BD28C6 /* SSXNewsCell.m in Sources */,
 				D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */,
@@ -430,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetEasyNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BasicTest.ios.NetEasyNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetEasyNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BasicTest.ios.NetEasyNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";

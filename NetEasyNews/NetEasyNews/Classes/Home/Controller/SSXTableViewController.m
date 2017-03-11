@@ -20,17 +20,10 @@
     
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)setUrlStr:(NSString *)urlStr{
+    _urlStr = urlStr;
+    
+    NSLog(@"%@",urlStr);
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
 
 @end

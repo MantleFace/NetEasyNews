@@ -156,12 +156,26 @@ static NSString *news_id=@"news_id";
     //计算滚动的距离
     CGFloat contentOffSet = channelCenterX - self.view.frame.size.width * .5;
     
-    NSLog(@"channelCenterX:%f-contentOffSet:%f",channelCenterX,contentOffSet);
+//    NSLog(@"channelCenterX:%f-contentOffSet:%f",channelCenterX,contentOffSet);
     
+    //srollView滚动的最小范围
+    CGFloat minOffSet = 0;
+    
+    //scrollView滚动的最大范围
+    CGFloat maxOffSet = self.channelScrollView.contentSize.width - self.view.bounds.size.width;
+    
+    
+    if(contentOffSet < minOffSet){
+        
+        contentOffSet = minOffSet;
+    }
+    
+    if(contentOffSet > maxOffSet){
+        contentOffSet = maxOffSet;
+    }
     
     //让频道scrollView滚动到指定的位置
     [self.channelScrollView setContentOffset:CGPointMake(contentOffSet, 0) animated:YES];
-    
     
     
 }

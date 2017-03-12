@@ -134,6 +134,8 @@ static NSString *news_id=@"news_id";
         //添加手势
         [channelLabel addGestureRecognizer:tap];
         
+        //tag索引
+        channelLabel.tag = i;
         
     }
     
@@ -164,18 +166,25 @@ static NSString *news_id=@"news_id";
     //scrollView滚动的最大范围
     CGFloat maxOffSet = self.channelScrollView.contentSize.width - self.view.bounds.size.width;
     
-    
+    //偏移小于最小范围
     if(contentOffSet < minOffSet){
-        
         contentOffSet = minOffSet;
     }
     
+    //偏移大于最大范围
     if(contentOffSet > maxOffSet){
         contentOffSet = maxOffSet;
     }
     
     //让频道scrollView滚动到指定的位置
     [self.channelScrollView setContentOffset:CGPointMake(contentOffSet, 0) animated:YES];
+    
+    //滚动的indexPath
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channel.tag inSection:0];
+    
+    //让newCollectionView自动加载到频道对应的新闻
+    //param: atScrollPosition 滚动方向
+    [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     
     
 }

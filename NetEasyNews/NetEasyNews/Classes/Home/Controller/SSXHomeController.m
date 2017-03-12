@@ -177,6 +177,17 @@ static NSString *news_id=@"news_id";
     //param: atScrollPosition 滚动方向
     [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     
+    //频道标签的互斥效果 否则快速滑动频道有bug
+    for (SSXChannelLabel *label in self.channelLabelArray) {
+        //说明当前label被选中 那么所有其他频道都变回普通状态
+        if(label == channel){
+            //变大变红
+            label.scalePercent = 1;
+        }else{
+            label.scalePercent = 0;
+        }
+    }
+    
     
 }
 
@@ -240,6 +251,7 @@ static NSString *news_id=@"news_id";
     //设置百分比
     leftChannel.scalePercent = leftPercent;
     
+    //防止右边最后的标签超出数组索引而越界
     if(rightIndex < self.channelLabelArray.count){
         
         SSXChannelLabel *rightChannel = self.channelLabelArray[rightIndex];

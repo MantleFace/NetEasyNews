@@ -9,8 +9,15 @@
 #import "SSXNewsModel.h"
 #import "SSXNetworkTools.h"
 #import <YYModel.h>
+#import "SSXPicInfo.h"
 
 @implementation SSXNewsModel
+
+//利用容器属性(NSArray ,NSSet )指定对应的模型
++ (NSDictionary *)modelContainerPropertyGenericClass {
+
+    return @{@"imgextra" : [SSXPicInfo class]};
+}
 
 
 + (void)requestNewsModelArrayWithUrlStr:(NSString *)urlStr andCompletionBlock:(void(^)(NSArray *newsModelArray))completionBlock{

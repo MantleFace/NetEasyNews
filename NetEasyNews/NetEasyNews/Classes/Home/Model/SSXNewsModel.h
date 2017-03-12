@@ -22,7 +22,7 @@
 /// 新闻回复数
 @property(nonatomic,assign) NSInteger replyCount;
 
-/// 多张配图
+/// 多张配图  使用YYModel把数组属性转化成模型数组 替代原始写法
 @property(nonatomic,strong) NSArray *imgextra;
 
 /// 是否大图

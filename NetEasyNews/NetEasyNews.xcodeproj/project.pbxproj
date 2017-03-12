@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6DD173D892065E8D0A415F3F /* libPods-NetEasyNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */; };
 		D8B495711E751EB300214AD8 /* MutiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B495701E751EB300214AD8 /* MutiCell.xib */; };
+		D8B495741E752BF500214AD8 /* SSXPicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B495731E752BF500214AD8 /* SSXPicInfo.m */; };
 		D8C7BEFA1E73823B00599E3F /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEF91E73823B00599E3F /* NSArray+Log.m */; };
 		D8C7BEFD1E73DBF700599E3F /* SSXNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEFC1E73DBF700599E3F /* SSXNewsModel.m */; };
 		D8C7BF001E741E9D00599E3F /* SSXTableNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C7BEFF1E741E9D00599E3F /* SSXTableNewsCell.m */; };
@@ -33,6 +34,8 @@
 		B0CAD73F99A766E90B990440 /* libPods-NetEasyNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetEasyNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A5764D7200D1D71181B160 /* Pods-NetEasyNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetEasyNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetEasyNews/Pods-NetEasyNews.release.xcconfig"; sourceTree = "<group>"; };
 		D8B495701E751EB300214AD8 /* MutiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MutiCell.xib; sourceTree = "<group>"; };
+		D8B495721E752BF500214AD8 /* SSXPicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXPicInfo.h; sourceTree = "<group>"; };
+		D8B495731E752BF500214AD8 /* SSXPicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSXPicInfo.m; sourceTree = "<group>"; };
 		D8C7BEF81E73823B00599E3F /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		D8C7BEF91E73823B00599E3F /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		D8C7BEFB1E73DBF700599E3F /* SSXNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSXNewsModel.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				D8D66DD01E72C97600BD28C6 /* SSXChannelModel.m */,
 				D8C7BEFB1E73DBF700599E3F /* SSXNewsModel.h */,
 				D8C7BEFC1E73DBF700599E3F /* SSXNewsModel.m */,
+				D8B495721E752BF500214AD8 /* SSXPicInfo.h */,
+				D8B495731E752BF500214AD8 /* SSXPicInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				D8D66DD71E72DF0000BD28C6 /* SSXNewsCell.m in Sources */,
 				D8C7BEFD1E73DBF700599E3F /* SSXNewsModel.m in Sources */,
 				D8D66DB31E72C04700BD28C6 /* AppDelegate.m in Sources */,
+				D8B495741E752BF500214AD8 /* SSXPicInfo.m in Sources */,
 				D8C7BF001E741E9D00599E3F /* SSXTableNewsCell.m in Sources */,
 				D8D66DD41E72CFD300BD28C6 /* SSXChannelLabel.m in Sources */,
 				D8D66DDA1E72E15000BD28C6 /* SSXTableViewController.m in Sources */,

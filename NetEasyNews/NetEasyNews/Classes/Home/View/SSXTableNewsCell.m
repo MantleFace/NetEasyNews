@@ -8,6 +8,7 @@
 
 #import "SSXTableNewsCell.h"
 #import <UIImageView+WebCache.h>
+#import "SSXPicInfo.h"
 
 @interface SSXTableNewsCell ()
 
@@ -54,18 +55,25 @@
     
     //多图 遍历图片集合
     for (int i = 0; i<self.mutiImage.count; i++) {
-        //获取对应图片字典
-        NSDictionary *dic = newsModel.imgextra[i];
-        
-        //通过key获取图片的地址
-        NSString *imgSrc = [dic objectForKey:@"imgsrc"];
-        
-        //获取对应的imageView
+//        //获取对应图片字典
+//        NSDictionary *dic = newsModel.imgextra[i];
+//        
+//        //通过key获取图片的地址
+//        NSString *imgSrc = [dic objectForKey:@"imgsrc"];
+//        
+//        //获取对应的imageView
+//        UIImageView *imageView = self.mutiImage[i];
+//        
+//        //给多图imageView设置网络图片
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:imgSrc] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+
+        //获取多图模型
+        SSXPicInfo *picModel = newsModel.imgextra[i];
+        //多图imageView
         UIImageView *imageView = self.mutiImage[i];
         
-        //给多图imageView设置网络图片
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imgSrc] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
-        
+        //使用YYModel方式
+        [imageView sd_setImageWithURL:[NSURL URLWithString:picModel.imgsrc] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
     }
     
     

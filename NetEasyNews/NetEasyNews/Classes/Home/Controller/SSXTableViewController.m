@@ -20,19 +20,27 @@
 
 @implementation SSXTableViewController
 
-static NSString *cell_id = @"cell_id";
+static NSString *baseCell = @"baseCell";
+static NSString *largeCell = @"largeCell";
+static NSString *mutiCell = @"mutiCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-
     [self setupUI];
 }
 
 - (void)setupUI{
-    //注册cell
-    [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:cell_id];
+    
+    //普通cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:baseCell];
+
+    //大图cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"LargeImageCell" bundle:nil] forCellReuseIdentifier:largeCell];
+    
+    //多图cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"MutiCell" bundle:nil] forCellReuseIdentifier:mutiCell];
+
     
 }
 
@@ -47,7 +55,6 @@ static NSString *cell_id = @"cell_id";
         
     }];
     
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -59,7 +66,24 @@ static NSString *cell_id = @"cell_id";
     //获取模型数据
     SSXNewsModel *model = self.newsModelArray[indexPath.row];
     
-    SSXTableNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cell_id forIndexPath:indexPath];
+    SSXTableNewsCell *cell;
+    
+    if(model.imgType){
+        
+        //大图
+        cell = [tableView dequeueReusableCellWithIdentifier:largeCell forIndexPath:indexPath];
+        
+    }else if(model.imgextra.count == 2){
+        
+        //多图cell
+        cell = [tableView dequeueReusableCellWithIdentifier:mutiCell forIndexPath:indexPath];
+    
+    }else{
+        
+        //普通cell
+        cell = [tableView dequeueReusableCellWithIdentifier:baseCell forIndexPath:indexPath];
+        
+    }
     
     cell.newsModel = model;
     
@@ -69,7 +93,16 @@ static NSString *cell_id = @"cell_id";
 
 //行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    
+    SSXNewsModel *model = self.newsModelArray[indexPath.row];
+    if(model.imgType){
+        //表示大图
+        return 130;
+    }else{
+        //普通cell
+        return 80;
+    }
+    
 }
 
 @end

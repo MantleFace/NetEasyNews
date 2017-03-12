@@ -11,7 +11,7 @@
 #import "SSXChannelLabel.h"
 #import "SSXNewsCell.h"
 
-@interface SSXHomeController ()<UICollectionViewDataSource>
+@interface SSXHomeController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 //频道视图
 @property (weak, nonatomic) IBOutlet UIScrollView *channelScrollView;
@@ -22,6 +22,9 @@
 
 //频道数据源数组
 @property(nonatomic,strong) NSArray *channelModelArray;
+
+//频道标签数组
+@property(nonatomic,strong) NSMutableArray *channelLabelArray;
 
 @end
 
@@ -47,6 +50,9 @@ static NSString *news_id=@"news_id";
 - (void)setupNewsCollectionView{
     //设置数据源
     self.newsCollectionView.dataSource = self;
+    
+    //设置代理
+    self.newsCollectionView.delegate = self;
     
     //设置每个itemSize的大小
     self.flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 64 - 44);
@@ -100,6 +106,8 @@ static NSString *news_id=@"news_id";
 - (void)setupChannelScrollView{
     
     self.channelModelArray = [SSXChannelModel getChannelArray];
+    
+    self.channelLabelArray = [NSMutableArray array];
 
     //遍历模型数组 创建频道对应的Label
     CGFloat W = 80;
@@ -137,6 +145,8 @@ static NSString *news_id=@"news_id";
         //tag索引
         channelLabel.tag = i;
         
+        [self.channelLabelArray addObject:channelLabel];
+        
     }
     
     self.channelScrollView.contentSize = CGSizeMake(W * self.channelModelArray.count, H);
@@ -152,13 +162,27 @@ static NSString *news_id=@"news_id";
     //获取手势点击的channel
     SSXChannelLabel *channel = (SSXChannelLabel *)gesture.view;
     
+    //滚动到指定标签
+    [self scrollToChannelLabel:channel];
+    
+    //滚动的indexPath
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channel.tag inSection:0];
+    
+    //让newCollectionView自动加载到频道对应的新闻
+    //param: atScrollPosition 滚动方向
+    [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    
+    
+}
+
+- (void)scrollToChannelLabel:(SSXChannelLabel *)channel{
     //计算channel的中心
     CGFloat channelCenterX = channel.center.x;
     
     //计算滚动的距离
     CGFloat contentOffSet = channelCenterX - self.view.frame.size.width * .5;
     
-//    NSLog(@"channelCenterX:%f-contentOffSet:%f",channelCenterX,contentOffSet);
+    //    NSLog(@"channelCenterX:%f-contentOffSet:%f",channelCenterX,contentOffSet);
     
     //srollView滚动的最小范围
     CGFloat minOffSet = 0;
@@ -178,15 +202,17 @@ static NSString *news_id=@"news_id";
     
     //让频道scrollView滚动到指定的位置
     [self.channelScrollView setContentOffset:CGPointMake(contentOffSet, 0) animated:YES];
+}
+
+//减速完成
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
-    //滚动的indexPath
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channel.tag inSection:0];
+    //计算滚动索引
+    int index = scrollView.contentOffset.x / self.view.bounds.size.width;
     
-    //让newCollectionView自动加载到频道对应的新闻
-    //param: atScrollPosition 滚动方向
-    [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+//    NSLog(@"%zd",index);
     
-    
+    [self scrollToChannelLabel:self.channelLabelArray[index]];
 }
 
 

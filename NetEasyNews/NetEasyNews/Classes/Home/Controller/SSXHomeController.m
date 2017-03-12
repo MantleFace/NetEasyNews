@@ -124,12 +124,45 @@ static NSString *news_id=@"news_id";
         channelLabel.textAlignment = NSTextAlignmentCenter;
         
         [self.channelScrollView addSubview:channelLabel];
+        
+        //开启用户交互
+        channelLabel.userInteractionEnabled = YES;
+        
+        //给Label添加手势 实现点击滚动到中间
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+        
+        //添加手势
+        [channelLabel addGestureRecognizer:tap];
+        
+        
     }
     
     self.channelScrollView.contentSize = CGSizeMake(W * self.channelModelArray.count, H);
     //取消水平和垂直方向指示器
     self.channelScrollView.showsVerticalScrollIndicator = NO;
     self.channelScrollView.showsHorizontalScrollIndicator = NO;
+    
+}
+
+//手势Action
+- (void)tapAction:(UITapGestureRecognizer *)gesture{
+    
+    //获取手势点击的channel
+    SSXChannelLabel *channel = (SSXChannelLabel *)gesture.view;
+    
+    //计算channel的中心
+    CGFloat channelCenterX = channel.center.x;
+    
+    //计算滚动的距离
+    CGFloat contentOffSet = channelCenterX - self.view.frame.size.width * .5;
+    
+    NSLog(@"channelCenterX:%f-contentOffSet:%f",channelCenterX,contentOffSet);
+    
+    
+    //让频道scrollView滚动到指定的位置
+    [self.channelScrollView setContentOffset:CGPointMake(contentOffSet, 0) animated:YES];
+    
+    
     
 }
 

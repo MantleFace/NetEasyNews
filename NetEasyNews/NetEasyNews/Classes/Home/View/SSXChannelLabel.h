@@ -10,4 +10,6 @@
 
 @interface SSXChannelLabel : UILabel
 
+@property(nonatomic,assign) CGFloat scalePercent;
+
 @end

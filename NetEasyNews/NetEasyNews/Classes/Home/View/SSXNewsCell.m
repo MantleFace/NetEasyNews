@@ -30,7 +30,7 @@
     self.tableVc.view.frame = self.contentView.bounds;
     
     //设置tableView背景颜色
-    self.tableVc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+//    self.tableVc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
     
 }
 

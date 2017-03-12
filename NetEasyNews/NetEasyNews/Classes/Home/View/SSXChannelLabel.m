@@ -10,5 +10,16 @@
 
 @implementation SSXChannelLabel
 
+- (void)setScalePercent:(CGFloat)scalePercent{
+    _scalePercent = scalePercent;
+    
+    CGFloat currentScale = 1 + scalePercent * .3;
+    
+    //颜色渐变
+    self.textColor = [UIColor colorWithRed:scalePercent green:0 blue:0 alpha:1];
+    
+    //缩放大小
+    self.transform = CGAffineTransformMakeScale(currentScale, currentScale);
+}
 
 @end

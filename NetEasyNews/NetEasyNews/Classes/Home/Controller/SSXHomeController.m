@@ -126,7 +126,7 @@ static NSString *news_id=@"news_id";
         //设置字体大小
         channelLabel.font = [UIFont systemFontOfSize:14];
         
-        channelLabel.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
+//        channelLabel.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1];
         
         //设置对齐
         channelLabel.textAlignment = NSTextAlignmentCenter;
@@ -146,6 +146,11 @@ static NSString *news_id=@"news_id";
         channelLabel.tag = i;
         
         [self.channelLabelArray addObject:channelLabel];
+        
+        //表示头条新闻
+        if(channelLabel.tag == 0){
+            channelLabel.scalePercent = 1;
+        }
         
     }
     
@@ -202,6 +207,46 @@ static NSString *news_id=@"news_id";
     
     //让频道scrollView滚动到指定的位置
     [self.channelScrollView setContentOffset:CGPointMake(contentOffSet, 0) animated:YES];
+}
+
+//collectionView滚动计算标签百分比
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    CGFloat floatIndex = scrollView.contentOffset.x / self.view.bounds.size.width;
+    
+    int intIndex = scrollView.contentOffset.x / self.view.bounds.size.width;
+    
+    //计算百分比
+    CGFloat percent = floatIndex - intIndex;
+    
+//    NSLog(@"%f",percent);
+    
+    //左边标签的缩放百分比
+    CGFloat leftPercent = 1- percent;
+    
+    //右边标签的缩放百分比
+    CGFloat rightPercent = percent;
+    
+//    NSLog(@"%f - %f",leftPercent,rightPercent);
+    
+    //计算左侧标签索引
+    int leftIndex = intIndex;
+    
+    //计算右侧标签索引
+    int rightIndex = intIndex + 1;
+    
+    //根据索引获取左右label
+    SSXChannelLabel *leftChannel = self.channelLabelArray[leftIndex];
+    //设置百分比
+    leftChannel.scalePercent = leftPercent;
+    
+    if(rightIndex < self.channelLabelArray.count){
+        
+        SSXChannelLabel *rightChannel = self.channelLabelArray[rightIndex];
+        rightChannel.scalePercent = rightPercent;
+    }
+    
+    
 }
 
 //减速完成

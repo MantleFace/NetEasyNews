@@ -98,6 +98,11 @@ static NSString *mutiCell = @"mutiCell";
     if(model.imgType){
         //表示大图
         return 130;
+        
+    }else if(model.imgextra.count == 2){
+        //表示多图
+        return 180;
+        
     }else{
         //普通cell
         return 80;

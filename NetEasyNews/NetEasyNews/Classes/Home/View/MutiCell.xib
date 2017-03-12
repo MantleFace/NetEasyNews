@@ -71,6 +71,14 @@
                     <constraint firstItem="4SY-sk-qma" firstAttribute="leading" secondItem="7rR-65-sRP" secondAttribute="leading" constant="10" id="vf1-ge-w02"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imgsrcImageView" destination="4SY-sk-qma" id="k62-Sx-UVE"/>
+                <outlet property="lblReplyCount" destination="cYV-Im-oGS" id="ut1-54-FPl"/>
+                <outlet property="lblSource" destination="WkG-ee-oFt" id="gK5-L9-MJv"/>
+                <outlet property="lblTitle" destination="rZZ-GB-Cux" id="qSm-XN-Qqg"/>
+                <outletCollection property="mutiImage" destination="ZJ2-vZ-NOJ" id="hEe-gp-InC"/>
+                <outletCollection property="mutiImage" destination="1Tl-Wh-0Gp" id="uqP-rF-xZG"/>
+            </connections>
             <point key="canvasLocation" x="-60.5" y="-85"/>
         </tableViewCell>
     </objects>
